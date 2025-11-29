@@ -1,6 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-
-namespace MauiEnterpriseApp.ViewModels
+﻿namespace MauiEnterpriseApp.ViewModels
 {
     // Tüm ViewModel’lerin türeyeceği temel sınıf
     public partial class BaseViewModel : ObservableObject

@@ -1,10 +1,10 @@
-﻿using System.Globalization;
-using Microsoft.Extensions.Logging;
-using MauiEnterpriseApp.Resources.Localization;
+﻿using MauiEnterpriseApp.Resources.Localization;
 using MauiEnterpriseApp.Services.Api;
 using MauiEnterpriseApp.Services.Auth;
 using MauiEnterpriseApp.ViewModels.Auth;
 using MauiEnterpriseApp.Views.Auth;
+using Microsoft.Extensions.Logging;
+using System.Globalization;
 
 
 namespace MauiEnterpriseApp

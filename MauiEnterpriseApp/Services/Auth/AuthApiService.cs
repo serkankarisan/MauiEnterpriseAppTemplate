@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using MauiEnterpriseApp.Models.Api;
+﻿using MauiEnterpriseApp.Models.Api;
 using MauiEnterpriseApp.Models.Auth;
 using MauiEnterpriseApp.Services.Api;
 
