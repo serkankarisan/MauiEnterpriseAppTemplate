@@ -61,6 +61,33 @@ namespace MauiEnterpriseApp.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to © 2025 Maui Enterprise.
+        /// </summary>
+        internal static string App_Flyout_Footer {
+            get {
+                return ResourceManager.GetString("App_Flyout_Footer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maui Enterprise.
+        /// </summary>
+        internal static string App_Name {
+            get {
+                return ResourceManager.GetString("App_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kurumsal .NET MAUI Uygulama Şablonu.
+        /// </summary>
+        internal static string App_Tagline {
+            get {
+                return ResourceManager.GetString("App_Tagline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sunucudan geçerli bir yanıt alınamadı. Lütfen tekrar deneyin..
         /// </summary>
         internal static string Common_Error_EmptyResponse {
@@ -102,6 +129,78 @@ namespace MauiEnterpriseApp.Resources.Localization {
         internal static string Common_Error_Technical {
             get {
                 return ResourceManager.GetString("Common_Error_Technical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form.
+        /// </summary>
+        internal static string Dashboard_Button_Form {
+            get {
+                return ResourceManager.GetString("Dashboard_Button_Form", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Liste / Detay.
+        /// </summary>
+        internal static string Dashboard_Button_List {
+            get {
+                return ResourceManager.GetString("Dashboard_Button_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profil.
+        /// </summary>
+        internal static string Dashboard_Button_Profile {
+            get {
+                return ResourceManager.GetString("Dashboard_Button_Profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ayarlar.
+        /// </summary>
+        internal static string Dashboard_Button_Settings {
+            get {
+                return ResourceManager.GetString("Dashboard_Button_Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hızlı İşlemler.
+        /// </summary>
+        internal static string Dashboard_Section_QuickActions {
+            get {
+                return ResourceManager.GetString("Dashboard_Section_QuickActions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ana Sayfa.
+        /// </summary>
+        internal static string Dashboard_Title {
+            get {
+                return ResourceManager.GetString("Dashboard_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hoş geldiniz..
+        /// </summary>
+        internal static string Dashboard_Welcome_Generic {
+            get {
+                return ResourceManager.GetString("Dashboard_Welcome_Generic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hoş geldin, {0}.
+        /// </summary>
+        internal static string Dashboard_Welcome_WithName {
+            get {
+                return ResourceManager.GetString("Dashboard_Welcome_WithName", resourceCulture);
             }
         }
         
@@ -219,6 +318,24 @@ namespace MauiEnterpriseApp.Resources.Localization {
         internal static string Shell_Login_Title {
             get {
                 return ResourceManager.GetString("Shell_Login_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Koyu tema.
+        /// </summary>
+        internal static string Theme_Toggle_Dark {
+            get {
+                return ResourceManager.GetString("Theme_Toggle_Dark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Açık tema.
+        /// </summary>
+        internal static string Theme_Toggle_Light {
+            get {
+                return ResourceManager.GetString("Theme_Toggle_Light", resourceCulture);
             }
         }
     }

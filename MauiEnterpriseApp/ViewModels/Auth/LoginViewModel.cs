@@ -1,10 +1,12 @@
 ﻿using MauiEnterpriseApp.Resources.Localization;
+using MauiEnterpriseApp.Services.Session;
 
 namespace MauiEnterpriseApp.ViewModels.Auth
 {
     public partial class LoginViewModel : BaseViewModel
     {
         private readonly IAuthService _authService;
+        private readonly ISessionService _sessionService;
 
         [ObservableProperty]
         private string? email;
@@ -12,9 +14,11 @@ namespace MauiEnterpriseApp.ViewModels.Auth
         [ObservableProperty]
         private string? password;
 
-        public LoginViewModel(IAuthService authService)
+        public LoginViewModel(IAuthService authService, ISessionService sessionService)
         {
             _authService = authService;
+            _sessionService = sessionService;
+
             Title = AppResources.Login_Title;
         }
 
@@ -42,21 +46,23 @@ namespace MauiEnterpriseApp.ViewModels.Auth
                 {
                     if (result.IsTechnicalError)
                     {
-                        // Teknik hatalar: network, server crash, vs.
-                        // Ortak bir resource key kullanabiliriz
                         ErrorMessage = AppResources.Common_Error_Technical;
                     }
                     else
                     {
-                        // İşlemsel hata: yanlış şifre, kullanıcı pasif, vs.
-                        // Backend'ten gelen MessageCode'a göre mapping yapabiliriz
                         ErrorMessage = MapLoginErrorMessage(result.MessageCode);
                     }
 
                     return;
                 }
 
-                // TODO: Başarılı giriş → Shell navigation
+                // Başarılı login ise, session'ı set edelim
+                if (result.Data != null)
+                {
+                    _sessionService.SetLogin(result.Data);
+                }
+                // Dashboard'u root olarak aç (login ekranını stack'ten temizler)
+                await Shell.Current.GoToAsync("//DashboardPage");
             }
             finally
             {

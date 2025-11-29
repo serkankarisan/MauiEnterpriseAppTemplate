@@ -171,4 +171,43 @@
   <data name="Login_Error_Locked" xml:space="preserve">
     <value>Hesabınız kilitlenmiş. Lütfen sistem yöneticinizle iletişime geçin.</value>
   </data>
+  <data name="Dashboard_Button_Settings" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="Dashboard_Button_Form" xml:space="preserve">
+    <value>Form</value>
+  </data>
+  <data name="Dashboard_Button_List" xml:space="preserve">
+    <value>Liste / Detay</value>
+  </data>
+  <data name="Dashboard_Button_Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Dashboard_Section_QuickActions" xml:space="preserve">
+    <value>Hızlı İşlemler</value>
+  </data>
+  <data name="Dashboard_Welcome_WithName" xml:space="preserve">
+    <value>Hoş geldin, {0}</value>
+  </data>
+  <data name="Dashboard_Welcome_Generic" xml:space="preserve">
+    <value>Hoş geldiniz.</value>
+  </data>
+  <data name="Dashboard_Title" xml:space="preserve">
+    <value>Ana Sayfa</value>
+  </data>
+  <data name="App_Flyout_Footer" xml:space="preserve">
+    <value>© 2025 Maui Enterprise</value>
+  </data>
+  <data name="App_Tagline" xml:space="preserve">
+    <value>Kurumsal .NET MAUI Uygulama Şablonu</value>
+  </data>
+  <data name="App_Name" xml:space="preserve">
+    <value>Maui Enterprise</value>
+  </data>
+  <data name="Theme_Toggle_Dark" xml:space="preserve">
+    <value>Koyu tema</value>
+  </data>
+  <data name="Theme_Toggle_Light" xml:space="preserve">
+    <value>Açık tema</value>
+  </data>
 </root>

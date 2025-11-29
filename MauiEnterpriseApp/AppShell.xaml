@@ -1,15 +1,168 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="MauiEnterpriseApp.AppShell"
+    x:Name="RootShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewsAuth="clr-namespace:MauiEnterpriseApp.Views.Auth"
-    xmlns:resx="clr-namespace=MauiEnterpriseApp.Resources.Localization">
+    xmlns:viewsMain="clr-namespace:MauiEnterpriseApp.Views.Main"
+    xmlns:resx="clr-namespace:MauiEnterpriseApp.Resources.Localization"
+    Shell.FlyoutBehavior="Flyout"
+    FlyoutBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource OffBlack}}"
+    Shell.TabBarBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource OffBlack}}">
 
+    <!-- FLYOUT HEADER + SEPARATOR -->
+    <Shell.FlyoutHeader>
+        <Grid
+            RowDefinitions="Auto,Auto"
+            BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource OffBlack}}">
+
+            <!-- Üst header -->
+            <Grid
+                Grid.Row="0"
+                Padding="16,32,16,12"
+                ColumnDefinitions="Auto,*,Auto">
+
+                <!-- Logo -->
+                <Image
+                    Grid.Column="0"
+                    WidthRequest="28"
+                    HeightRequest="28"
+                    Aspect="AspectFit"
+                    Source="{AppThemeBinding Light=company_logo_light.png, Dark=company_logo_dark.png}" />
+
+                <!-- App adı + tagline -->
+                <VerticalStackLayout
+                    Grid.Column="1"
+                    Spacing="2"
+                    Margin="10,0,0,0"
+                    VerticalOptions="Center">
+
+                    <Label
+                        Text="{x:Static resx:AppResources.App_Name}"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+
+                    <Label
+                        Text="{x:Static resx:AppResources.App_Tagline}"
+                        FontSize="11"
+                        TextColor="{AppThemeBinding Light={StaticResource Gray500}, Dark={StaticResource Gray300}}" />
+                </VerticalStackLayout>
+
+                <!-- Tema toggle (Light/Dark) -->
+                <ImageButton
+                    Grid.Column="2"
+                    WidthRequest="28"
+                    HeightRequest="28"
+                    Margin="6,0,0,0"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent"
+                    Padding="0"
+                    CornerRadius="50"
+                    Command="{Binding ToggleThemeCommand, Source={x:Reference RootShell}}">
+                    <ImageButton.Source>
+                        <FontImageSource
+                            Glyph="🌗"
+                            Size="16"
+                            Color="{AppThemeBinding Light={StaticResource Gray700}, Dark={StaticResource Gray100}}" />
+                    </ImageButton.Source>
+                </ImageButton>
+            </Grid>
+
+            <!-- Header ile liste arasında ince ayırıcı çizgi -->
+            <BoxView
+                Grid.Row="1"
+                HeightRequest="1"
+                Margin="16,4,16,8"
+                HorizontalOptions="Fill"
+                Color="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray700}}" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!-- FLYOUT ITEM TEMPLATE – Border ile, arka plan Shell'den geliyor -->
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <!-- Burada BackgroundColor YOK, Shell.FlyoutBackgroundColor kullanılıyor -->
+            <Grid Padding="0">
+
+                <Border
+                    x:Name="ItemBorder"
+                    Padding="16,8"
+                    StrokeThickness="0">
+
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                        <Image
+                            WidthRequest="20"
+                            HeightRequest="20"
+                            VerticalOptions="Center"
+                            Source="{Binding Icon}" />
+
+                        <Label
+                            x:Name="ItemLabel"
+                            Text="{Binding Title}"
+                            FontSize="14"
+                            VerticalOptions="Center"/>
+                    </Grid>
+                </Border>
+
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter TargetName="ItemBorder"
+                                        Property="BackgroundColor"
+                                        Value="Transparent" />
+                                <Setter TargetName="ItemLabel"
+                                        Property="Label.TextColor"
+                                        Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
+
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter TargetName="ItemBorder"
+                                        Property="BackgroundColor"
+                                        Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}" />
+                                <Setter TargetName="ItemLabel"
+                                        Property="Label.TextColor"
+                                        Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}" />
+
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <!-- FOOTER -->
+    <Shell.FlyoutFooter>
+        <Grid
+            Padding="16,8"
+            BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource OffBlack}}">
+            <Label
+                Text="{x:Static resx:AppResources.App_Flyout_Footer}"
+                FontSize="10"
+                HorizontalOptions="Center"
+                TextColor="{AppThemeBinding Light={StaticResource Gray400}, Dark={StaticResource Gray500}}" />
+        </Grid>
+    </Shell.FlyoutFooter>
+
+    <!-- LOGIN: menüde görünmesin, top bar da olmasın -->
     <ShellContent
         Title="{x:Static resx:AppResources.Shell_Login_Title}"
         ContentTemplate="{DataTemplate viewsAuth:LoginPage}"
         Route="LoginPage"
-        Shell.NavBarIsVisible="False" />
+        Shell.NavBarIsVisible="False"
+        Shell.FlyoutItemIsVisible="False" />
 
+    <!-- DASHBOARD: menüde görünen ana sayfa -->
+    <ShellContent
+        Title="{x:Static resx:AppResources.Dashboard_Title}"
+        Icon="ic_dashboard.png"
+        ContentTemplate="{DataTemplate viewsMain:DashboardPage}"
+        Route="DashboardPage" />
 </Shell>

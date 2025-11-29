@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiEnterpriseApp.Views.Main.DashboardPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resx="clr-namespace:MauiEnterpriseApp.Resources.Localization"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24"
+            Spacing="16">
+
+            <!-- Hoş geldin mesajı -->
+            <Label
+                Text="{Binding WelcomeText}"
+                Style="{StaticResource Headline}"
+                HorizontalOptions="Start"
+                HorizontalTextAlignment="Start" />
+
+            <!-- Basit özet alanı -->
+            <Label
+                Text="{x:Static resx:AppResources.Dashboard_Section_QuickActions}"
+                Style="{StaticResource SubHeadline}"
+                Margin="0,24,0,8" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                RowDefinitions="Auto,Auto"
+                ColumnSpacing="12"
+                RowSpacing="12">
+
+                <!-- Profil butonu -->
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="{x:Static resx:AppResources.Dashboard_Button_Profile}"
+                    HeightRequest="60"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill" />
+
+                <!-- Liste/Detay butonu -->
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{x:Static resx:AppResources.Dashboard_Button_List}"
+                    HeightRequest="60"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill" />
+
+                <!-- Form butonu -->
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="{x:Static resx:AppResources.Dashboard_Button_Form}"
+                    HeightRequest="60"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill" />
+
+                <!-- Ayarlar (ileride) -->
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{x:Static resx:AppResources.Dashboard_Button_Settings}"
+                    HeightRequest="60"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
