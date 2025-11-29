@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiEnterpriseApp.Views.Auth.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace=MauiEnterpriseApp.ViewModels.Auth"
+    xmlns:shapes="clr-namespace:Microsoft.Maui.Controls.Shapes;assembly=Microsoft.Maui.Controls"
+    xmlns:resx="clr-namespace:MauiEnterpriseApp.Resources.Localization"
+    x:DataType="vm:LoginViewModel"
+    BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource OffBlack}}">
+
+    <!-- Küçük ekran / klavye için ScrollView -->
+    <ScrollView>
+        <Grid
+            Padding="24,48"
+            RowDefinitions="Auto,Auto,*">
+
+            <!-- Logo kısmı -->
+            <Grid
+                Grid.Row="0"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                Margin="0,0,0,24">
+
+                <Border
+                    WidthRequest="140"
+                    HeightRequest="140"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray900}}"
+                    Stroke="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Primary}}"
+                    StrokeThickness="0">
+
+                    <Border.StrokeShape>
+                        <shapes:RoundRectangle CornerRadius="70" />
+                    </Border.StrokeShape>
+
+                    <Border.Shadow>
+                        <Shadow Opacity="0.2" />
+                    </Border.Shadow>
+
+                    <Image
+                        Aspect="AspectFit"
+                        Margin="0"
+                        Source="{AppThemeBinding Light=company_logo_light.png, Dark=company_logo_dark.png}" />
+                </Border>
+            </Grid>
+
+            <!-- Login formu -->
+            <VerticalStackLayout
+                Grid.Row="1"
+                Spacing="24"
+                VerticalOptions="Center"
+                HorizontalOptions="Fill">
+
+                <!-- Başlıklar -->
+                <VerticalStackLayout Spacing="4">
+                    <Label
+                        Text="{x:Static resx:AppResources.Login_Title}"
+                        Style="{StaticResource Headline}" />
+
+                    <Label
+                        Text="{x:Static resx:AppResources.Login_Subtitle}"
+                        Style="{StaticResource SubHeadline}"
+                        FontSize="16" />
+                </VerticalStackLayout>
+
+                <!-- E-posta -->
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="{x:Static resx:AppResources.Login_EmailLabel}" />
+                    <Entry
+                        Placeholder="{x:Static resx:AppResources.Login_EmailPlaceholder}"
+                        Text="{Binding Email, Mode=TwoWay}"
+                        Keyboard="Email" />
+                </VerticalStackLayout>
+
+                <!-- Şifre -->
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="{x:Static resx:AppResources.Login_PasswordLabel}" />
+                    <Entry
+                        Placeholder="{x:Static resx:AppResources.Login_PasswordPlaceholder}"
+                        IsPassword="True"
+                        Text="{Binding Password, Mode=TwoWay}" />
+                </VerticalStackLayout>
+
+                <!-- Hata mesajı -->
+                <Label
+                    Text="{Binding ErrorMessage}"
+                    TextColor="{AppThemeBinding Light={StaticResource Magenta}, Dark={StaticResource Magenta}}"
+                    FontSize="13"
+                    IsVisible="{Binding ErrorMessage, Converter={StaticResource StringNotNullOrEmptyConverter}}" />
+
+                <!-- Busy indicator -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <ActivityIndicator
+                        Grid.Column="0"
+                        IsRunning="{Binding IsBusy}"
+                        IsVisible="{Binding IsBusy}"
+                        HeightRequest="24"
+                        WidthRequest="24" />
+
+                    <Label
+                        Grid.Column="1"
+                        Text="{x:Static resx:AppResources.Login_BusyText}"
+                        FontSize="12"
+                        VerticalTextAlignment="Center"
+                        IsVisible="{Binding IsBusy}" />
+                </Grid>
+
+                <!-- Giriş butonu -->
+                <Button
+                    Text="{x:Static resx:AppResources.Login_Button}"
+                    Command="{Binding LoginCommand}"
+                    Margin="0,16,0,0"
+                    IsEnabled="{Binding IsNotBusy}" />
+
+                <!-- Demo bilgisi -->
+                <Label
+                    Text="{x:Static resx:AppResources.Login_DemoHint}"
+                    FontSize="11"
+                    TextColor="{AppThemeBinding Light={StaticResource Gray500}, Dark={StaticResource Gray400}}"
+                    HorizontalTextAlignment="Center"
+                    Margin="0,16,0,0" />
+
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>
