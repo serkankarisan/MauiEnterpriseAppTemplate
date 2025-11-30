@@ -9,14 +9,26 @@ namespace MauiEnterpriseApp.ViewModels.Main
     {
         private readonly IProfileService _profileService;
 
-        [ObservableProperty]
-        private UserProfile? profile;
+        private UserProfile? _profile;
+        public UserProfile? Profile
+        {
+            get => _profile;
+            set => SetProperty(ref _profile, value);
+        }
 
-        [ObservableProperty]
-        private string statusMessage = string.Empty;
+        private string _statusMessage = string.Empty;
+        public string StatusMessage
+        {
+            get => _statusMessage;
+            set => SetProperty(ref _statusMessage, value);
+        }
 
-        [ObservableProperty]
-        private ImageSource? profileImage;
+        private ImageSource? _profileImage;
+        public ImageSource? ProfileImage
+        {
+            get => _profileImage;
+            set => SetProperty(ref _profileImage, value);
+        }
 
         private const string DefaultProfileImageName = "no_image.png";
 

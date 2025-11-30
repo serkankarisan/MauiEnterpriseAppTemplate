@@ -276,4 +276,46 @@
   <data name="ItemList_LastUpdatedFormat" xml:space="preserve">
     <value>Last updated: {0:dd.MM.yyyy HH:mm}</value>
   </data>
+  <data name="ItemDetail_Title" xml:space="preserve">
+    <value>Record Detail</value>
+  </data>
+  <data name="ItemDetail_Header_Title" xml:space="preserve">
+    <value>Record Detail</value>
+  </data>
+  <data name="ItemDetail_Section_General" xml:space="preserve">
+    <value>General Information</value>
+  </data>
+  <data name="ItemDetail_Section_Metadata" xml:space="preserve">
+    <value>System Info</value>
+  </data>
+  <data name="ItemDetail_Label_Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="ItemDetail_Label_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ItemDetail_Label_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ItemDetail_Label_CreatedAt" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="ItemDetail_Label_LastUpdatedAt" xml:space="preserve">
+    <value>Last Updated</value>
+  </data>
+  <data name="ItemDetail_Label_Owner" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="ItemDetail_Loading_Message" xml:space="preserve">
+    <value>Loading record details...</value>
+  </data>
+  <data name="ItemDetail_Error_NotFound" xml:space="preserve">
+    <value>Record not found.</value>
+  </data>
+  <data name="ItemDetail_Error_Generic" xml:space="preserve">
+    <value>An error occurred while loading record details.</value>
+  </data>
+  <data name="ItemDetail_Label_Tags" xml:space="preserve">
+    <value>Tags</value>
+  </data>
 </root>

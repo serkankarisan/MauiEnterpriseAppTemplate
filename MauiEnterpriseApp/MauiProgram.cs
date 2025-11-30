@@ -2,7 +2,6 @@
 using MauiEnterpriseApp.Services.Api;
 using MauiEnterpriseApp.Services.Auth;
 using MauiEnterpriseApp.Services.Items;
-using MauiEnterpriseApp.Services.Items.MauiEnterpriseApp.Services.Items;
 using MauiEnterpriseApp.Services.Profile;
 using MauiEnterpriseApp.Services.Session;
 using MauiEnterpriseApp.ViewModels.Auth;
@@ -63,12 +62,14 @@ namespace MauiEnterpriseApp
             builder.Services.AddTransient<DashboardViewModel>();
             builder.Services.AddTransient<ProfileViewModel>();
             builder.Services.AddTransient<ItemListViewModel>();
+            builder.Services.AddTransient<ItemDetailViewModel>();
 
             // View
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<DashboardPage>();
             builder.Services.AddTransient<ProfilePage>();
             builder.Services.AddTransient<ItemListPage>();
+            builder.Services.AddTransient<ItemDetailPage>();
 
             // ======================================
 

@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using MauiEnterpriseApp.Views.Main;
+using System.Windows.Input;
 
 namespace MauiEnterpriseApp;
 
@@ -14,6 +15,8 @@ public partial class AppShell : Shell
         ToggleThemeCommand = new Command(ToggleTheme);
 
         InitializeComponent();
+        // Detay sayfasını Shell route olarak kaydet
+        Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
     }
 
     private void ToggleTheme()

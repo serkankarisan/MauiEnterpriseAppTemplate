@@ -11,8 +11,12 @@ namespace MauiEnterpriseApp.ViewModels.Main
     {
         private readonly ISessionService _sessionService;
 
-        [ObservableProperty]
-        private string? welcomeText = string.Empty;
+        private string _welcomeText = string.Empty;
+        public string WelcomeText
+        {
+            get => _welcomeText;
+            set => SetProperty(ref _welcomeText, value);
+        }
 
         public DashboardViewModel(ISessionService sessionService)
         {

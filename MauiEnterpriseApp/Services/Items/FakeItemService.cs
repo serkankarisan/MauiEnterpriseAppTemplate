@@ -2,56 +2,75 @@
 
 namespace MauiEnterpriseApp.Services.Items
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Threading;
-    using System.Threading.Tasks;
-
-    namespace MauiEnterpriseApp.Services.Items
+    /// <summary>
+    /// Geçici fake servis.
+    /// Demo amaçlı sabit kayıtlar döner.
+    /// </summary>
+    public class FakeItemService : IItemService
     {
-        /// <summary>
-        /// Geçici fake servis.
-        /// Demo amaçlı sabit birkaç kayıt döner.
-        /// </summary>
-        public class FakeItemService : IItemService
+        // Demo data kaynağı: hem liste hem detay buradan beslenecek
+        private static readonly List<ItemDetail> _items = new()
         {
-            public Task<IReadOnlyList<ItemSummary>> GetItemsAsync(CancellationToken cancellationToken = default)
+            new ItemDetail
             {
-                var now = DateTime.UtcNow;
-
-                var items = new List<ItemSummary>
+                Id = "1",
+                Title = "Onay bekleyen sipariş",
+                Description = "Müşteri A için oluşturulan sipariş. Onay sürecinde.",
+                Status = "Pending",
+                CreatedAt = DateTime.UtcNow.AddHours(-8),
+                LastUpdatedAt = DateTime.UtcNow.AddMinutes(-15),
+                Owner = "Serkan Karışan",
+                Tags = "Sipariş,Onay,Beklemede",
+                ImageData = null
+            },
+            new ItemDetail
             {
-                new ItemSummary
-                {
-                    Id = "1",
-                    Title = "Onay bekleyen sipariş",
-                    Description = "Müşteri A için oluşturulan sipariş.",
-                    Status = "Pending",
-                    LastUpdatedAt = now.AddMinutes(-15),
-                    ThumbnailImageData = null // İstersek buraya da image data verebiliriz
-                },
-                new ItemSummary
-                {
-                    Id = "2",
-                    Title = "Aktif sözleşme",
-                    Description = "2024 yılı bakım sözleşmesi.",
-                    Status = "Active",
-                    LastUpdatedAt = now.AddHours(-5),
-                    ThumbnailImageData = null
-                },
-                new ItemSummary
-                {
-                    Id = "3",
-                    Title = "Pasif kayıt",
-                    Description = "Artık kullanılmayan eski kayıt.",
-                    Status = "Passive",
-                    LastUpdatedAt = now.AddDays(-2),
-                    ThumbnailImageData = null
-                }
-            };
-
-                return Task.FromResult<IReadOnlyList<ItemSummary>>(items);
+                Id = "2",
+                Title = "Aktif sözleşme",
+                Description = "2024 yılı bakım ve destek sözleşmesi.",
+                Status = "Active",
+                CreatedAt = DateTime.UtcNow.AddDays(-30),
+                LastUpdatedAt = DateTime.UtcNow.AddHours(-5),
+                Owner = "Yazılım Ekibi",
+                Tags = "Sözleşme,Aktif",
+                ImageData = null
+            },
+            new ItemDetail
+            {
+                Id = "3",
+                Title = "Pasif kayıt",
+                Description = "Artık kullanılmayan eski kayıt.",
+                Status = "Passive",
+                CreatedAt = DateTime.UtcNow.AddYears(-1),
+                LastUpdatedAt = DateTime.UtcNow.AddDays(-2),
+                Owner = "Arşiv",
+                Tags = "Arşiv,Pasif",
+                ImageData = null
             }
+        };
+
+        public Task<IReadOnlyList<ItemSummary>> GetItemsAsync(CancellationToken cancellationToken = default)
+        {
+            var summaries = _items
+                .Select(x => new ItemSummary
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    Description = x.Description,
+                    Status = x.Status,
+                    LastUpdatedAt = x.LastUpdatedAt,
+                    ThumbnailImageData = null // İleride x.ImageData'dan türetebilirsin
+                })
+                .ToList()
+                .AsReadOnly();
+
+            return Task.FromResult<IReadOnlyList<ItemSummary>>(summaries);
+        }
+
+        public Task<ItemDetail?> GetItemByIdAsync(string id, CancellationToken cancellationToken = default)
+        {
+            var item = _items.FirstOrDefault(x => x.Id == id);
+            return Task.FromResult<ItemDetail?>(item);
         }
     }
 }

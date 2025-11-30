@@ -61,20 +61,22 @@
                                     MaxLines="1" />
 
                                 <!-- Durum chip'i -->
-                                <Frame
+                                <Border
                                     Grid.Row="0"
                                     Grid.Column="1"
                                     Padding="8,2"
                                     Margin="8,0,0,0"
-                                    HasShadow="False"
-                                    CornerRadius="12"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray800}}">
-
+                                    BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray800}}"
+                                    StrokeThickness="0">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="12" />
+                                    </Border.StrokeShape>
+                                    
                                     <Label
                                         Text="{Binding Status}"
                                         FontSize="12"
                                         TextColor="{StaticResource Gray900}" />
-                                </Frame>
+                                </Border>
 
                                 <!-- Açıklama + tarih -->
                                 <StackLayout

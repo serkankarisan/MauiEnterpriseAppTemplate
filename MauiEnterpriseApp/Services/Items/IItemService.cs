@@ -5,9 +5,14 @@ namespace MauiEnterpriseApp.Services.Items
     public interface IItemService
     {
         /// <summary>
-        /// Liste ekranında gösterilecek kayıtları döner.
-        /// İleride gerçek API çağrısına bağlanabilir.
+        /// Liste ekranında gösterilecek kayıt özetlerini döner.
         /// </summary>
         Task<IReadOnlyList<ItemSummary>> GetItemsAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Verilen Id'ye göre kayıt detayını döner.
+        /// Gerçek senaryoda API'ye gidecek.
+        /// </summary>
+        Task<ItemDetail?> GetItemByIdAsync(string id, CancellationToken cancellationToken = default);
     }
 }

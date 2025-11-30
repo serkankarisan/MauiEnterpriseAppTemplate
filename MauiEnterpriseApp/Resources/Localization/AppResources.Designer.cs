@@ -205,6 +205,132 @@ namespace MauiEnterpriseApp.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kayıt detayı yüklenirken bir hata oluştu..
+        /// </summary>
+        internal static string ItemDetail_Error_Generic {
+            get {
+                return ResourceManager.GetString("ItemDetail_Error_Generic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıt bulunamadı..
+        /// </summary>
+        internal static string ItemDetail_Error_NotFound {
+            get {
+                return ResourceManager.GetString("ItemDetail_Error_NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıt Detayı.
+        /// </summary>
+        internal static string ItemDetail_Header_Title {
+            get {
+                return ResourceManager.GetString("ItemDetail_Header_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oluşturulma.
+        /// </summary>
+        internal static string ItemDetail_Label_CreatedAt {
+            get {
+                return ResourceManager.GetString("ItemDetail_Label_CreatedAt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Açıklama.
+        /// </summary>
+        internal static string ItemDetail_Label_Description {
+            get {
+                return ResourceManager.GetString("ItemDetail_Label_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Son Güncelleme.
+        /// </summary>
+        internal static string ItemDetail_Label_LastUpdatedAt {
+            get {
+                return ResourceManager.GetString("ItemDetail_Label_LastUpdatedAt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorumlu.
+        /// </summary>
+        internal static string ItemDetail_Label_Owner {
+            get {
+                return ResourceManager.GetString("ItemDetail_Label_Owner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Durum.
+        /// </summary>
+        internal static string ItemDetail_Label_Status {
+            get {
+                return ResourceManager.GetString("ItemDetail_Label_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Etiketler.
+        /// </summary>
+        internal static string ItemDetail_Label_Tags {
+            get {
+                return ResourceManager.GetString("ItemDetail_Label_Tags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Başlık.
+        /// </summary>
+        internal static string ItemDetail_Label_Title {
+            get {
+                return ResourceManager.GetString("ItemDetail_Label_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıt detayı yükleniyor....
+        /// </summary>
+        internal static string ItemDetail_Loading_Message {
+            get {
+                return ResourceManager.GetString("ItemDetail_Loading_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Genel Bilgiler.
+        /// </summary>
+        internal static string ItemDetail_Section_General {
+            get {
+                return ResourceManager.GetString("ItemDetail_Section_General", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sistem Bilgileri.
+        /// </summary>
+        internal static string ItemDetail_Section_Metadata {
+            get {
+                return ResourceManager.GetString("ItemDetail_Section_Metadata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıt Detayı.
+        /// </summary>
+        internal static string ItemDetail_Title {
+            get {
+                return ResourceManager.GetString("ItemDetail_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gösterilecek kayıt bulunamadı..
         /// </summary>
         internal static string ItemList_Empty_Message {

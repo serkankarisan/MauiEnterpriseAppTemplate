@@ -1,6 +1,7 @@
 ﻿using MauiEnterpriseApp.Models.Items;
 using MauiEnterpriseApp.Resources.Localization;
 using MauiEnterpriseApp.Services.Items;
+using MauiEnterpriseApp.Views.Main;
 using System.Collections.ObjectModel;
 
 namespace MauiEnterpriseApp.ViewModels.Main
@@ -14,11 +15,19 @@ namespace MauiEnterpriseApp.ViewModels.Main
 
         public ObservableCollection<ItemSummary> Items { get; } = new();
 
-        [ObservableProperty]
-        private string statusMessage = string.Empty;
+        private string _statusMessage = string.Empty;
+        public string StatusMessage
+        {
+            get => _statusMessage;
+            set => SetProperty(ref _statusMessage, value);
+        }
 
-        [ObservableProperty]
-        private bool isRefreshing;
+        private bool _isRefreshing;
+        public bool IsRefreshing
+        {
+            get => _isRefreshing;
+            set => SetProperty(ref _isRefreshing, value);
+        }
 
         public ItemListViewModel(IItemService itemService)
         {
@@ -79,9 +88,10 @@ namespace MauiEnterpriseApp.ViewModels.Main
             if (item == null)
                 return;
 
-            // TODO: Detay sayfasına navigasyon yapılacak.
-            // Örn: await Shell.Current.GoToAsync($"///ItemDetailPage?itemId={item.Id}");
-            await Application.Current.MainPage.DisplayAlert("Seçilen kayıt", item.Title, "OK");
+            // Shell route: AppShell.xaml.cs içinde nameof(ItemDetailPage) ile register edildi
+            var route = $"{nameof(ItemDetailPage)}?ItemId={Uri.EscapeDataString(item.Id)}";
+
+            await Shell.Current.GoToAsync(route);
         }
     }
 }
