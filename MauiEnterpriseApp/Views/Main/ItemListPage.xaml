@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiEnterpriseApp.Views.Main.ItemListPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resx="clr-namespace:MauiEnterpriseApp.Resources.Localization"
+    x:Name="PageRoot"
+    Title="{Binding Title}">
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,*">
+
+            <!-- Başlık -->
+            <Label
+                Grid.Row="0"
+                Text="{x:Static resx:AppResources.ItemList_Header_Title}"
+                Style="{StaticResource Headline}"
+                HorizontalOptions="Start"
+                Margin="24,16,24,8" />
+
+            <!-- Liste -->
+            <RefreshView
+                Grid.Row="1"
+                IsRefreshing="{Binding IsRefreshing}"
+                Command="{Binding RefreshCommand}">
+
+                <CollectionView
+                    ItemsSource="{Binding Items}"
+                    SelectionMode="None">
+
+                    <CollectionView.EmptyView>
+                        <Label
+                            Text="{Binding StatusMessage}"
+                            TextColor="{StaticResource Gray500}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center" />
+                    </CollectionView.EmptyView>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+                                Padding="16"
+                                Margin="16,8"
+                                RowDefinitions="Auto,Auto"
+                                ColumnDefinitions="*,Auto">
+
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding BindingContext.ItemTappedCommand, Source={x:Reference Name=PageRoot}}"
+                                        CommandParameter="{Binding .}" />
+                                </Grid.GestureRecognizers>
+
+                                <!-- Başlık -->
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="{Binding Title}"
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    LineBreakMode="TailTruncation"
+                                    MaxLines="1" />
+
+                                <!-- Durum chip'i -->
+                                <Frame
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Padding="8,2"
+                                    Margin="8,0,0,0"
+                                    HasShadow="False"
+                                    CornerRadius="12"
+                                    BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray800}}">
+
+                                    <Label
+                                        Text="{Binding Status}"
+                                        FontSize="12"
+                                        TextColor="{StaticResource Gray900}" />
+                                </Frame>
+
+                                <!-- Açıklama + tarih -->
+                                <StackLayout
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2"
+                                    Spacing="4"
+                                    Margin="0,4,0,0">
+
+                                    <Label
+                                        Text="{Binding Description}"
+                                        FontSize="13"
+                                        TextColor="{StaticResource Gray700}"
+                                        LineBreakMode="TailTruncation"
+                                        MaxLines="2" />
+
+                                    <Label
+                                        Text="{Binding LastUpdatedAt, StringFormat='Son güncelleme: {0:dd.MM.yyyy HH:mm}'}"
+                                        FontSize="11"
+                                        TextColor="{StaticResource Gray500}" />
+                                </StackLayout>
+
+                                <!-- Kart görünümü için arka plan -->
+                                <Grid.Background>
+                                    <SolidColorBrush Color="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray900}}" />
+                                </Grid.Background>
+
+                                <Grid.Shadow>
+                                    <Shadow
+                                        Radius="10"
+                                        Opacity="0.25"
+                                        Offset="0,3" />
+                                </Grid.Shadow>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

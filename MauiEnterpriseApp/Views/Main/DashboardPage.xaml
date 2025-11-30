@@ -47,7 +47,8 @@
                     Text="{x:Static resx:AppResources.Dashboard_Button_List}"
                     HeightRequest="60"
                     HorizontalOptions="Fill"
-                    VerticalOptions="Fill" />
+                    VerticalOptions="Fill"
+                    Command="{Binding GoToItemListCommand}" />
 
                 <!-- Form butonu -->
                 <Button

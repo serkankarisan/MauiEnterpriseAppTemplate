@@ -249,4 +249,31 @@
   <data name="Profile_Loading_Message" xml:space="preserve">
     <value>Profil yükleniyor...</value>
   </data>
+  <data name="ItemList_Title" xml:space="preserve">
+    <value>Liste / Detay</value>
+  </data>
+  <data name="ItemList_Header_Title" xml:space="preserve">
+    <value>Kayıtlar</value>
+  </data>
+  <data name="ItemList_Empty_Message" xml:space="preserve">
+    <value>Gösterilecek kayıt bulunamadı.</value>
+  </data>
+  <data name="ItemList_Error_Message" xml:space="preserve">
+    <value>Kayıtlar yüklenirken bir hata oluştu.</value>
+  </data>
+  <data name="ItemList_Refresh" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="ItemList_Status_Active" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="ItemList_Status_Passive" xml:space="preserve">
+    <value>Pasif</value>
+  </data>
+  <data name="ItemList_Status_Pending" xml:space="preserve">
+    <value>Beklemede</value>
+  </data>
+  <data name="ItemList_LastUpdatedFormat" xml:space="preserve">
+    <value>Son güncelleme: {0:dd.MM.yyyy HH:mm}</value>
+  </data>
 </root>

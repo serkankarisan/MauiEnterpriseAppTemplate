@@ -43,5 +43,11 @@ namespace MauiEnterpriseApp.ViewModels.Main
         {
             await Shell.Current.GoToAsync("///ProfilePage");
         }
+        [RelayCommand]
+        private async Task GoToItemListAsync()
+        {
+            await Shell.Current.GoToAsync("///ItemListPage");
+        }
+
     }
 }

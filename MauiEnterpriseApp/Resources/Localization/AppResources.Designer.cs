@@ -205,6 +205,87 @@ namespace MauiEnterpriseApp.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gösterilecek kayıt bulunamadı..
+        /// </summary>
+        internal static string ItemList_Empty_Message {
+            get {
+                return ResourceManager.GetString("ItemList_Empty_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıtlar yüklenirken bir hata oluştu..
+        /// </summary>
+        internal static string ItemList_Error_Message {
+            get {
+                return ResourceManager.GetString("ItemList_Error_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıtlar.
+        /// </summary>
+        internal static string ItemList_Header_Title {
+            get {
+                return ResourceManager.GetString("ItemList_Header_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Son güncelleme: {0:dd.MM.yyyy HH:mm}.
+        /// </summary>
+        internal static string ItemList_LastUpdatedFormat {
+            get {
+                return ResourceManager.GetString("ItemList_LastUpdatedFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yenile.
+        /// </summary>
+        internal static string ItemList_Refresh {
+            get {
+                return ResourceManager.GetString("ItemList_Refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aktif.
+        /// </summary>
+        internal static string ItemList_Status_Active {
+            get {
+                return ResourceManager.GetString("ItemList_Status_Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pasif.
+        /// </summary>
+        internal static string ItemList_Status_Passive {
+            get {
+                return ResourceManager.GetString("ItemList_Status_Passive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Beklemede.
+        /// </summary>
+        internal static string ItemList_Status_Pending {
+            get {
+                return ResourceManager.GetString("ItemList_Status_Pending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Liste / Detay.
+        /// </summary>
+        internal static string ItemList_Title {
+            get {
+                return ResourceManager.GetString("ItemList_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Giriş yapılıyor....
         /// </summary>
         internal static string Login_BusyText {

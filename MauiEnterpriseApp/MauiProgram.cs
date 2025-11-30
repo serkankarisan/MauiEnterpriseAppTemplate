@@ -1,6 +1,8 @@
 ﻿using MauiEnterpriseApp.Resources.Localization;
 using MauiEnterpriseApp.Services.Api;
 using MauiEnterpriseApp.Services.Auth;
+using MauiEnterpriseApp.Services.Items;
+using MauiEnterpriseApp.Services.Items.MauiEnterpriseApp.Services.Items;
 using MauiEnterpriseApp.Services.Profile;
 using MauiEnterpriseApp.Services.Session;
 using MauiEnterpriseApp.ViewModels.Auth;
@@ -54,16 +56,19 @@ namespace MauiEnterpriseApp
             builder.Services.AddSingleton<IAuthService, AuthApiService>();
             builder.Services.AddSingleton<ISessionService, SessionService>();
             builder.Services.AddSingleton<IProfileService, FakeProfileService>();
+            builder.Services.AddSingleton<IItemService, FakeItemService>();
 
             // ViewModel
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<DashboardViewModel>();
             builder.Services.AddTransient<ProfileViewModel>();
+            builder.Services.AddTransient<ItemListViewModel>();
 
             // View
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<DashboardPage>();
             builder.Services.AddTransient<ProfilePage>();
+            builder.Services.AddTransient<ItemListPage>();
 
             // ======================================
 

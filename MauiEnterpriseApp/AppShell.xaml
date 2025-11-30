@@ -171,4 +171,10 @@
         Title="{x:Static resx:AppResources.Profile_Title}"
         Route="ProfilePage"
         ContentTemplate="{DataTemplate viewsMain:ProfilePage}" />
+    
+    <ShellContent
+        Title="{x:Static resx:AppResources.ItemList_Title}"
+        Route="ItemListPage"
+        ContentTemplate="{DataTemplate viewsMain:ItemListPage}" />
+
 </Shell>

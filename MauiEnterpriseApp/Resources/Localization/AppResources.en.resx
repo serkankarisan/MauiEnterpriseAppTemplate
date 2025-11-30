@@ -249,4 +249,31 @@
   <data name="Profile_Loading_Message" xml:space="preserve">
     <value>Loading profile...</value>
   </data>
+  <data name="ItemList_Title" xml:space="preserve">
+    <value>List / Detail</value>
+  </data>
+  <data name="ItemList_Header_Title" xml:space="preserve">
+    <value>Records</value>
+  </data>
+  <data name="ItemList_Empty_Message" xml:space="preserve">
+    <value>No records to display.</value>
+  </data>
+  <data name="ItemList_Error_Message" xml:space="preserve">
+    <value>An error occurred while loading records.</value>
+  </data>
+  <data name="ItemList_Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="ItemList_Status_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="ItemList_Status_Passive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="ItemList_Status_Pending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="ItemList_LastUpdatedFormat" xml:space="preserve">
+    <value>Last updated: {0:dd.MM.yyyy HH:mm}</value>
+  </data>
 </root>
