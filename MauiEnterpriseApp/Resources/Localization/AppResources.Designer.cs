@@ -88,6 +88,24 @@ namespace MauiEnterpriseApp.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to İptal.
+        /// </summary>
+        internal static string Common_Cancel {
+            get {
+                return ResourceManager.GetString("Common_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sil.
+        /// </summary>
+        internal static string Common_Delete {
+            get {
+                return ResourceManager.GetString("Common_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sunucudan geçerli bir yanıt alınamadı. Lütfen tekrar deneyin..
         /// </summary>
         internal static string Common_Error_EmptyResponse {
@@ -129,6 +147,24 @@ namespace MauiEnterpriseApp.Resources.Localization {
         internal static string Common_Error_Technical {
             get {
                 return ResourceManager.GetString("Common_Error_Technical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hayır.
+        /// </summary>
+        internal static string Common_No {
+            get {
+                return ResourceManager.GetString("Common_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Evet.
+        /// </summary>
+        internal static string Common_Yes {
+            get {
+                return ResourceManager.GetString("Common_Yes", resourceCulture);
             }
         }
         
@@ -201,6 +237,15 @@ namespace MauiEnterpriseApp.Resources.Localization {
         internal static string Dashboard_Welcome_WithName {
             get {
                 return ResourceManager.GetString("Dashboard_Welcome_WithName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Düzenle.
+        /// </summary>
+        internal static string ItemDetail_Edit_Button {
+            get {
+                return ResourceManager.GetString("ItemDetail_Edit_Button", resourceCulture);
             }
         }
         
@@ -327,6 +372,195 @@ namespace MauiEnterpriseApp.Resources.Localization {
         internal static string ItemDetail_Title {
             get {
                 return ResourceManager.GetString("ItemDetail_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İptal.
+        /// </summary>
+        internal static string ItemForm_Button_Cancel {
+            get {
+                return ResourceManager.GetString("ItemForm_Button_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kaydet.
+        /// </summary>
+        internal static string ItemForm_Button_Save {
+            get {
+                return ResourceManager.GetString("ItemForm_Button_Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıt Düzenle.
+        /// </summary>
+        internal static string ItemForm_Header_Edit {
+            get {
+                return ResourceManager.GetString("ItemForm_Header_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yeni Kayıt.
+        /// </summary>
+        internal static string ItemForm_Header_New {
+            get {
+                return ResourceManager.GetString("ItemForm_Header_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Açıklama.
+        /// </summary>
+        internal static string ItemForm_Label_Description {
+            get {
+                return ResourceManager.GetString("ItemForm_Label_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorumlu.
+        /// </summary>
+        internal static string ItemForm_Label_Owner {
+            get {
+                return ResourceManager.GetString("ItemForm_Label_Owner", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Durum.
+        /// </summary>
+        internal static string ItemForm_Label_Status {
+            get {
+                return ResourceManager.GetString("ItemForm_Label_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Etiketler.
+        /// </summary>
+        internal static string ItemForm_Label_Tags {
+            get {
+                return ResourceManager.GetString("ItemForm_Label_Tags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Başlık.
+        /// </summary>
+        internal static string ItemForm_Label_Title {
+            get {
+                return ResourceManager.GetString("ItemForm_Label_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıt kaydedilirken bir hata oluştu..
+        /// </summary>
+        internal static string ItemForm_Save_Error {
+            get {
+                return ResourceManager.GetString("ItemForm_Save_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıt başarıyla kaydedildi..
+        /// </summary>
+        internal static string ItemForm_Save_Success {
+            get {
+                return ResourceManager.GetString("ItemForm_Save_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıt Formu.
+        /// </summary>
+        internal static string ItemForm_Title {
+            get {
+                return ResourceManager.GetString("ItemForm_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Durum zorunludur..
+        /// </summary>
+        internal static string ItemForm_Validation_Status_Required {
+            get {
+                return ResourceManager.GetString("ItemForm_Validation_Status_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Başlık zorunludur..
+        /// </summary>
+        internal static string ItemForm_Validation_Title_Required {
+            get {
+                return ResourceManager.GetString("ItemForm_Validation_Title_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Düzenle.
+        /// </summary>
+        internal static string ItemList_Context_Edit {
+            get {
+                return ResourceManager.GetString("ItemList_Context_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İşlem Seç.
+        /// </summary>
+        internal static string ItemList_Context_Title {
+            get {
+                return ResourceManager.GetString("ItemList_Context_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detayı Gör.
+        /// </summary>
+        internal static string ItemList_Context_View {
+            get {
+                return ResourceManager.GetString("ItemList_Context_View", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;{0}&apos; kaydını silmek istediğinize emin misiniz?.
+        /// </summary>
+        internal static string ItemList_Delete_Confirm_Message {
+            get {
+                return ResourceManager.GetString("ItemList_Delete_Confirm_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıt Sil.
+        /// </summary>
+        internal static string ItemList_Delete_Confirm_Title {
+            get {
+                return ResourceManager.GetString("ItemList_Delete_Confirm_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıt silinirken bir hata oluştu..
+        /// </summary>
+        internal static string ItemList_Delete_Error {
+            get {
+                return ResourceManager.GetString("ItemList_Delete_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kayıt başarıyla silindi..
+        /// </summary>
+        internal static string ItemList_Delete_Success {
+            get {
+                return ResourceManager.GetString("ItemList_Delete_Success", resourceCulture);
             }
         }
         

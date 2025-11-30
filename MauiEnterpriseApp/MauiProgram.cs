@@ -63,6 +63,7 @@ namespace MauiEnterpriseApp
             builder.Services.AddTransient<ProfileViewModel>();
             builder.Services.AddTransient<ItemListViewModel>();
             builder.Services.AddTransient<ItemDetailViewModel>();
+            builder.Services.AddTransient<ItemFormViewModel>();
 
             // View
             builder.Services.AddTransient<LoginPage>();
@@ -70,6 +71,7 @@ namespace MauiEnterpriseApp
             builder.Services.AddTransient<ProfilePage>();
             builder.Services.AddTransient<ItemListPage>();
             builder.Services.AddTransient<ItemDetailPage>();
+            builder.Services.AddTransient<ItemFormPage>();
 
             // ======================================
 

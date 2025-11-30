@@ -318,4 +318,82 @@
   <data name="ItemDetail_Label_Tags" xml:space="preserve">
     <value>Tags</value>
   </data>
+  <data name="ItemForm_Title" xml:space="preserve">
+    <value>Record Form</value>
+  </data>
+  <data name="ItemForm_Header_New" xml:space="preserve">
+    <value>New Record</value>
+  </data>
+  <data name="ItemForm_Header_Edit" xml:space="preserve">
+    <value>Edit Record</value>
+  </data>
+  <data name="ItemForm_Label_Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="ItemForm_Label_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ItemForm_Label_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ItemForm_Label_Owner" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="ItemForm_Label_Tags" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="ItemForm_Button_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ItemForm_Button_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ItemForm_Validation_Title_Required" xml:space="preserve">
+    <value>Title is required.</value>
+  </data>
+  <data name="ItemForm_Validation_Status_Required" xml:space="preserve">
+    <value>Status is required.</value>
+  </data>
+  <data name="ItemForm_Save_Success" xml:space="preserve">
+    <value>Record has been saved successfully.</value>
+  </data>
+  <data name="ItemForm_Save_Error" xml:space="preserve">
+    <value>An error occurred while saving the record.</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ItemList_Context_Title" xml:space="preserve">
+    <value>Select Action</value>
+  </data>
+  <data name="ItemList_Context_View" xml:space="preserve">
+    <value>View Details</value>
+  </data>
+  <data name="ItemList_Context_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Common_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Common_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="ItemList_Delete_Confirm_Title" xml:space="preserve">
+    <value>Delete Record</value>
+  </data>
+  <data name="ItemList_Delete_Confirm_Message" xml:space="preserve">
+    <value>Are you sure you want to delete '{0}'?</value>
+  </data>
+  <data name="ItemList_Delete_Success" xml:space="preserve">
+    <value>Record has been deleted successfully.</value>
+  </data>
+  <data name="ItemList_Delete_Error" xml:space="preserve">
+    <value>An error occurred while deleting the record.</value>
+  </data>
+  <data name="ItemDetail_Edit_Button" xml:space="preserve">
+    <value>Edit</value>
+  </data>
 </root>

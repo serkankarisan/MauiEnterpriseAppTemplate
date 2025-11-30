@@ -1,22 +1,31 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage
     x:Class="MauiEnterpriseApp.Views.Main.ItemListPage"
+    x:Name="PageRoot"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:resx="clr-namespace:MauiEnterpriseApp.Resources.Localization"
-    x:Name="PageRoot"
+    xmlns:shapes="clr-namespace:Microsoft.Maui.Controls.Shapes;assembly=Microsoft.Maui.Controls"
     Title="{Binding Title}">
 
     <ContentPage.Content>
         <Grid RowDefinitions="Auto,*">
-
-            <!-- Başlık -->
-            <Label
+            <Grid
                 Grid.Row="0"
-                Text="{x:Static resx:AppResources.ItemList_Header_Title}"
-                Style="{StaticResource Headline}"
-                HorizontalOptions="Start"
-                Margin="24,16,24,8" />
+                ColumnDefinitions="*,Auto"
+                Margin="24,16,24,8">
+                <Label
+                    Grid.Column="0"
+                    Text="{x:Static resx:AppResources.ItemList_Header_Title}"
+                    Style="{StaticResource Headline}" />
+
+                <Button
+                    Grid.Column="1"
+                    Text="+"
+                    Command="{Binding NewItemCommand}"
+                    WidthRequest="40"
+                    HeightRequest="40" />
+            </Grid>
 
             <!-- Liste -->
             <RefreshView
@@ -25,6 +34,7 @@
                 Command="{Binding RefreshCommand}">
 
                 <CollectionView
+                    x:Name="ItemsCollectionView"
                     ItemsSource="{Binding Items}"
                     SelectionMode="None">
 
@@ -44,41 +54,62 @@
                                 RowDefinitions="Auto,Auto"
                                 ColumnDefinitions="*,Auto">
 
+                                <!-- TEK TIK: Detay -->
                                 <Grid.GestureRecognizers>
                                     <TapGestureRecognizer
-                                        Command="{Binding BindingContext.ItemTappedCommand, Source={x:Reference Name=PageRoot}}"
+                                        Command="{Binding BindingContext.ItemTappedCommand, Source={x:Reference ItemsCollectionView}}"
                                         CommandParameter="{Binding .}" />
                                 </Grid.GestureRecognizers>
 
-                                <!-- Başlık -->
-                                <Label
+                                <!-- ÜST SATIR: Başlık + Durum + Context butonu -->
+                                <Grid
                                     Grid.Row="0"
-                                    Grid.Column="0"
-                                    Text="{Binding Title}"
-                                    FontAttributes="Bold"
-                                    FontSize="16"
-                                    LineBreakMode="TailTruncation"
-                                    MaxLines="1" />
+                                    ColumnDefinitions="*,Auto,Auto"
+                                    ColumnSpacing="8">
 
-                                <!-- Durum chip'i -->
-                                <Border
-                                    Grid.Row="0"
-                                    Grid.Column="1"
-                                    Padding="8,2"
-                                    Margin="8,0,0,0"
-                                    BackgroundColor="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray800}}"
-                                    StrokeThickness="0">
-                                    <Border.StrokeShape>
-                                        <RoundRectangle CornerRadius="12" />
-                                    </Border.StrokeShape>
-                                    
+                                    <!-- Başlık -->
                                     <Label
-                                        Text="{Binding Status}"
-                                        FontSize="12"
-                                        TextColor="{StaticResource Gray900}" />
-                                </Border>
+                                        Grid.Column="0"
+                                        Text="{Binding Title}"
+                                        FontAttributes="Bold"
+                                        FontSize="16"
+                                        LineBreakMode="TailTruncation"
+                                        MaxLines="1" />
 
-                                <!-- Açıklama + tarih -->
+                                    <!-- Durum chip'i -->
+                                    <!-- Context menü ikonu (daha minimal) -->
+                                    <Border
+                                        Grid.Column="2"
+                                        WidthRequest="28"
+                                        HeightRequest="28"
+                                        StrokeThickness="0"
+                                        BackgroundColor="Transparent"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Center"
+                                        Margin="4,0,0,0">
+
+                                        <Border.StrokeShape>
+                                            <shapes:RoundRectangle CornerRadius="14" />
+                                        </Border.StrokeShape>
+
+                                        <!-- Tıklama: context menü aç -->
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer
+                                                Command="{Binding BindingContext.ShowContextMenuCommand, Source={x:Reference ItemsCollectionView}}"
+                                                CommandParameter="{Binding .}" />
+                                        </Border.GestureRecognizers>
+
+                                        <Label
+                                            Text="⋮"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            FontSize="18"
+                                            TextColor="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray300}}" />
+                                    </Border>
+
+                                </Grid>
+
+                                <!-- ALT SATIR: Açıklama + Tarih -->
                                 <StackLayout
                                     Grid.Row="1"
                                     Grid.Column="0"
@@ -99,9 +130,10 @@
                                         TextColor="{StaticResource Gray500}" />
                                 </StackLayout>
 
-                                <!-- Kart görünümü için arka plan -->
+                                <!-- Kart görünümü -->
                                 <Grid.Background>
-                                    <SolidColorBrush Color="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray900}}" />
+                                    <SolidColorBrush
+                                        Color="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Gray900}}" />
                                 </Grid.Background>
 
                                 <Grid.Shadow>

@@ -2,13 +2,8 @@
 
 namespace MauiEnterpriseApp.Services.Items
 {
-    /// <summary>
-    /// Geçici fake servis.
-    /// Demo amaçlı sabit kayıtlar döner.
-    /// </summary>
     public class FakeItemService : IItemService
     {
-        // Demo data kaynağı: hem liste hem detay buradan beslenecek
         private static readonly List<ItemDetail> _items = new()
         {
             new ItemDetail
@@ -59,7 +54,7 @@ namespace MauiEnterpriseApp.Services.Items
                     Description = x.Description,
                     Status = x.Status,
                     LastUpdatedAt = x.LastUpdatedAt,
-                    ThumbnailImageData = null // İleride x.ImageData'dan türetebilirsin
+                    ThumbnailImageData = null
                 })
                 .ToList()
                 .AsReadOnly();
@@ -71,6 +66,58 @@ namespace MauiEnterpriseApp.Services.Items
         {
             var item = _items.FirstOrDefault(x => x.Id == id);
             return Task.FromResult<ItemDetail?>(item);
+        }
+
+        public Task<bool> SaveItemAsync(ItemDetail item, CancellationToken cancellationToken = default)
+        {
+            if (item == null)
+            {
+                return Task.FromResult(false);
+            }
+
+            // Id boşsa yeni, doluysa güncelle
+            if (string.IsNullOrWhiteSpace(item.Id))
+            {
+                item.Id = Guid.NewGuid().ToString("N");
+                item.CreatedAt ??= DateTime.UtcNow;
+                item.LastUpdatedAt = DateTime.UtcNow;
+                _items.Add(item);
+            }
+            else
+            {
+                var existing = _items.FirstOrDefault(x => x.Id == item.Id);
+                if (existing is null)
+                {
+                    // Yoksa yeni gibi ekleyelim
+                    item.CreatedAt ??= DateTime.UtcNow;
+                    item.LastUpdatedAt = DateTime.UtcNow;
+                    _items.Add(item);
+                }
+                else
+                {
+                    existing.Title = item.Title;
+                    existing.Description = item.Description;
+                    existing.Status = item.Status;
+                    existing.Owner = item.Owner;
+                    existing.Tags = item.Tags;
+                    existing.LastUpdatedAt = DateTime.UtcNow;
+                    existing.ImageData = item.ImageData;
+                }
+            }
+
+            return Task.FromResult(true);
+        }
+        public Task<bool> DeleteItemAsync(string id, CancellationToken cancellationToken = default)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+                return Task.FromResult(false);
+
+            var existing = _items.FirstOrDefault(x => x.Id == id);
+            if (existing is null)
+                return Task.FromResult(false);
+
+            _items.Remove(existing);
+            return Task.FromResult(true);
         }
     }
 }

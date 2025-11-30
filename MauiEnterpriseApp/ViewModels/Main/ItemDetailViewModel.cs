@@ -1,6 +1,7 @@
 ﻿using MauiEnterpriseApp.Models.Items;
 using MauiEnterpriseApp.Resources.Localization;
 using MauiEnterpriseApp.Services.Items;
+using MauiEnterpriseApp.Views.Main;
 
 namespace MauiEnterpriseApp.ViewModels.Main
 {
@@ -67,6 +68,7 @@ namespace MauiEnterpriseApp.ViewModels.Main
                     return;
                 }
 
+                Item = null;
                 Item = detail;
                 StatusMessage = string.Empty;
             }
@@ -79,6 +81,15 @@ namespace MauiEnterpriseApp.ViewModels.Main
             {
                 IsBusy = false;
             }
+        }
+        [RelayCommand]
+        private async Task EditAsync()
+        {
+            if (string.IsNullOrWhiteSpace(ItemId))
+                return;
+
+            var route = $"{nameof(ItemFormPage)}?ItemId={Uri.EscapeDataString(ItemId)}";
+            await Shell.Current.GoToAsync(route);
         }
     }
 }

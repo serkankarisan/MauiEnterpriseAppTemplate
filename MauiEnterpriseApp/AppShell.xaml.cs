@@ -17,6 +17,7 @@ public partial class AppShell : Shell
         InitializeComponent();
         // Detay sayfasını Shell route olarak kaydet
         Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
+        Routing.RegisterRoute(nameof(ItemFormPage), typeof(ItemFormPage));
     }
 
     private void ToggleTheme()

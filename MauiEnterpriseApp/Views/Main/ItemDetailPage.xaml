@@ -7,7 +7,13 @@
     xmlns:shapes="clr-namespace:Microsoft.Maui.Controls.Shapes;assembly=Microsoft.Maui.Controls"
     x:Name="PageRoot"
     Title="{Binding Title}">
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="{x:Static resx:AppResources.ItemDetail_Edit_Button}"
+            Priority="0"
+            Order="Primary"
+            Command="{Binding EditCommand}" />
+    </ContentPage.ToolbarItems>
     <ScrollView>
         <VerticalStackLayout
             Padding="24"
