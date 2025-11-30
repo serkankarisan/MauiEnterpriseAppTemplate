@@ -210,4 +210,43 @@
   <data name="Theme_Toggle_Light" xml:space="preserve">
     <value>Açık tema</value>
   </data>
+  <data name="Profile_Title" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Profile_Header_Title" xml:space="preserve">
+    <value>Kullanıcı Profili</value>
+  </data>
+  <data name="Profile_Section_BasicInfo" xml:space="preserve">
+    <value>Temel Bilgiler</value>
+  </data>
+  <data name="Profile_Section_Contact" xml:space="preserve">
+    <value>İletişim</value>
+  </data>
+  <data name="Profile_Label_FullName" xml:space="preserve">
+    <value>Ad Soyad</value>
+  </data>
+  <data name="Profile_Label_Email" xml:space="preserve">
+    <value>E-posta</value>
+  </data>
+  <data name="Profile_Label_Department" xml:space="preserve">
+    <value>Departman</value>
+  </data>
+  <data name="Profile_Label_Position" xml:space="preserve">
+    <value>Pozisyon</value>
+  </data>
+  <data name="Profile_Label_Phone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="Profile_Label_JoinedDate" xml:space="preserve">
+    <value>Sisteme Giriş</value>
+  </data>
+  <data name="Profile_Button_Edit" xml:space="preserve">
+    <value>Profili Düzenle</value>
+  </data>
+  <data name="Profile_Empty_Message" xml:space="preserve">
+    <value>Profil bilgileri yüklenemedi.</value>
+  </data>
+  <data name="Profile_Loading_Message" xml:space="preserve">
+    <value>Profil yükleniyor...</value>
+  </data>
 </root>

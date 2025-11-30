@@ -313,6 +313,123 @@ namespace MauiEnterpriseApp.Resources.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Profili Düzenle.
+        /// </summary>
+        internal static string Profile_Button_Edit {
+            get {
+                return ResourceManager.GetString("Profile_Button_Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profil bilgileri yüklenemedi..
+        /// </summary>
+        internal static string Profile_Empty_Message {
+            get {
+                return ResourceManager.GetString("Profile_Empty_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kullanıcı Profili.
+        /// </summary>
+        internal static string Profile_Header_Title {
+            get {
+                return ResourceManager.GetString("Profile_Header_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Departman.
+        /// </summary>
+        internal static string Profile_Label_Department {
+            get {
+                return ResourceManager.GetString("Profile_Label_Department", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-posta.
+        /// </summary>
+        internal static string Profile_Label_Email {
+            get {
+                return ResourceManager.GetString("Profile_Label_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ad Soyad.
+        /// </summary>
+        internal static string Profile_Label_FullName {
+            get {
+                return ResourceManager.GetString("Profile_Label_FullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sisteme Giriş.
+        /// </summary>
+        internal static string Profile_Label_JoinedDate {
+            get {
+                return ResourceManager.GetString("Profile_Label_JoinedDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefon.
+        /// </summary>
+        internal static string Profile_Label_Phone {
+            get {
+                return ResourceManager.GetString("Profile_Label_Phone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pozisyon.
+        /// </summary>
+        internal static string Profile_Label_Position {
+            get {
+                return ResourceManager.GetString("Profile_Label_Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profil yükleniyor....
+        /// </summary>
+        internal static string Profile_Loading_Message {
+            get {
+                return ResourceManager.GetString("Profile_Loading_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temel Bilgiler.
+        /// </summary>
+        internal static string Profile_Section_BasicInfo {
+            get {
+                return ResourceManager.GetString("Profile_Section_BasicInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İletişim.
+        /// </summary>
+        internal static string Profile_Section_Contact {
+            get {
+                return ResourceManager.GetString("Profile_Section_Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profil.
+        /// </summary>
+        internal static string Profile_Title {
+            get {
+                return ResourceManager.GetString("Profile_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Giriş.
         /// </summary>
         internal static string Shell_Login_Title {

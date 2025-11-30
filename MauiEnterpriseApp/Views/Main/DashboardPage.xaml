@@ -37,7 +37,8 @@
                     Text="{x:Static resx:AppResources.Dashboard_Button_Profile}"
                     HeightRequest="60"
                     HorizontalOptions="Fill"
-                    VerticalOptions="Fill" />
+                    VerticalOptions="Fill"
+                    Command="{Binding GoToProfileCommand}" />
 
                 <!-- Liste/Detay butonu -->
                 <Button

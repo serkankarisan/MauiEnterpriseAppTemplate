@@ -15,6 +15,7 @@ namespace MauiEnterpriseApp.Services.Auth
 
         public async Task<LoginServiceResult> LoginAsync(string email, string password)
         {
+            return LoginServiceResult.Success(new LoginResponse { UserName = "Test", Token = "deneme" });
             var request = new LoginRequest
             {
                 Email = email,

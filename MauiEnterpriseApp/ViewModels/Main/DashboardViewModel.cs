@@ -38,5 +38,10 @@ namespace MauiEnterpriseApp.ViewModels.Main
                 WelcomeText = string.Format(AppResources.Dashboard_Welcome_WithName, userName);
             }
         }
+        [RelayCommand]
+        private async Task GoToProfileAsync()
+        {
+            await Shell.Current.GoToAsync("///ProfilePage");
+        }
     }
 }

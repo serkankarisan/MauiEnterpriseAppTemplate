@@ -165,4 +165,10 @@
         Icon="ic_dashboard.png"
         ContentTemplate="{DataTemplate viewsMain:DashboardPage}"
         Route="DashboardPage" />
+
+    <!-- PROFILE -->
+    <ShellContent
+        Title="{x:Static resx:AppResources.Profile_Title}"
+        Route="ProfilePage"
+        ContentTemplate="{DataTemplate viewsMain:ProfilePage}" />
 </Shell>

@@ -16,6 +16,7 @@
 
             <!-- Global converter -->
             <converters:StringNotNullOrEmptyConverter x:Key="StringNotNullOrEmptyConverter" />
+            <converters:ImageDataToImageSourceConverter x:Key="ImageDataToImageSourceConverter" DefaultImageName="no_image.png" />
 
         </ResourceDictionary>
     </Application.Resources>
